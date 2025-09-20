@@ -1,0 +1,20 @@
+ /* W:\Amazone-clone2\my-app\src\styles\globals.css */
+
+/* If you want to use Poppins font, uncomment this line: */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* This line is generally NOT needed for Tailwind v4 if tailwind.config.js is in the root. */
+/* You can keep it commented out or remove it. */
+/* @config "../../tailwind.config.js"; */
+
+/* This is the ESSENTIAL line for Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Add any other custom global CSS styles below this line */
+/* For example, if you want a base font family: */
+/*
+body {
+  font-family: 'Poppins', sans-serif;
+}
+*/
+  
