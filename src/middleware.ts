@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key"; // ⚠️ Put in .env
 
@@ -15,12 +15,15 @@ export async function comparePassword(password: string, hashed: string): Promise
 }
 
 // Generate JWT
-export function generateToken(payload: object, expiresIn: string | number = "7d") {
+export function generateToken(
+  payload: string | Buffer | object, // ✅ Fix: allow object/string/Buffer
+  expiresIn: string | number = "7d"
+): string {
   return jwt.sign(payload, JWT_SECRET, { expiresIn });
 }
 
 // Verify JWT
-export function verifyToken(token: string) {
+export function verifyToken(token: string): string | JwtPayload | null {
   try {
     return jwt.verify(token, JWT_SECRET);
   } catch {

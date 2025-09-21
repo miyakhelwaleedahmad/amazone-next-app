@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import EditCategory from "./EditCategory";
-import DeleteCategoryButton from "@/components/admin/DeleteCategoryButton";
+import DeleteCategoryButton from "@/components/admin/DeleateCategoryButton";
 
 interface Category {
   _id: string;
